@@ -1,54 +1,5 @@
 #!/bin/bash
-dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
-red() { echo -e "\\033[32;1m${*}\\033[0m"; }
-clear
-fun_bar() {
-    CMD[0]="$1"
-    CMD[1]="$2"
-    (
-        [[ -e $HOME/fim ]] && rm $HOME/fim
-        ${CMD[0]} -y >/dev/null 2>&1
-        ${CMD[1]} -y >/dev/null 2>&1
-        touch $HOME/fim
-    ) >/dev/null 2>&1 &
-    tput civis
-    echo -ne "  \033[0;33mPlease Wait Loading \033[1;37m- \033[0;33m["
-    while true; do
-        for ((i = 0; i < 18; i++)); do
-            echo -ne "\033[0;32m#"
-            sleep 0.1s
-        done
-        [[ -e $HOME/fim ]] && rm $HOME/fim && break
-        echo -e "\033[0;33m]"
-        sleep 1s
-        tput cuu1
-        tput dl1
-        echo -ne "  \033[0;33mPlease Wait Loading \033[1;37m- \033[0;33m["
-    done
-    echo -e "\033[0;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
-    tput cnorm
-}
-res1() {
-    wget https://raw.githubusercontent.com/Hubdarkweb/VPsTOpPLUG/main/ubuntu/menu.zip
-    unzip menu.zip
-    chmod +x menu/*
-    mv menu/* /usr/local/sbin
-    rm -rf menu
-    rm -rf menu.zip
-    rm -rf update.sh
-}
-netfilter-persistent
-clear
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " \e[1;97;101m          UPDATED SCRIPT POWERED BY 🧑‍💻TOpPLUG🐼🏄⛷️🌊🧑‍💻☣️🥷 Cyberpunk 🐼🏂🏄⛷️🌊🧑‍💻🗽     \e[0m"
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e ""
-echo -e "  \033[1;91m update script service\033[1;37m"
-fun_bar 'res1'
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e ""
-read -n 1 -s -r -p "Press [ Enter ] to back on menu"
-menu
+# Obfuscated Script
 
-###########- COLOR CODE -##############
+decoded_script="$(echo 'IyEvYmluL2Jhc2gKZGF0ZUZyb21TZXJ2ZXI9JChjdXJsIC12IC0taW5zZWN1cmUgLS1zaWxlbnQgaHR0cHM6Ly9nb29nbGUuY29tLyAyPiYxIHwgZ3JlcCBEYXRlIHwgc2VkIC1lICdzLzwgRGF0ZTogLy8nKQpiaWppPWBkYXRlICsiJVktJW0tJWQiIC1kICIkZGF0ZUZyb21TZXJ2ZXIiYApyZWQoKSB7IGVjaG8gLWUgIlxcMDMzWzMyOzFtJHsqfVxcMDMzWzBtIjsgfQpjbGVhcgpmdW5fYmFyKCkgewogICAgQ01EWzBdPSIkMSIKICAgIENNRFsxXT0iJDIiCiAgICAoCiAgICAgICAgW1sgLWUgJEhPTUUvZmltIF1dICYmIHJtICRIT01FL2ZpbQogICAgICAgICR7Q01EWzBdfSAteSA+L2Rldi9udWxsIDI+JjEKICAgICAgICAke0NNRFsxXX0gLXkgPi9kZXYvbnVsbCAyPiYxCiAgICAgICAgdG91Y2ggJEhPTUUvZmltCiAgICApID4vZGV2L251bGwgMj4mMSAmCiAgICB0cHV0IGNpdmlzCiAgICBlY2hvIC1uZSAiICBcMDMzWzA7MzNtUGxlYXNlIFdhaXQgTG9hZGluZyBcMDMzWzE7MzdtLSBcMDMzWzA7MzNtWyIKICAgIHdoaWxlIHRydWU7IGRvCiAgICAgICAgZm9yICgoaSA9IDA7IGkgPCAxODsgaSsrKSk7IGRvCiAgICAgICAgICAgIGVjaG8gLW5lICJcMDMzWzA7MzJtIyIKICAgICAgICAgICAgc2xlZXAgMC4xcwogICAgICAgIGRvbmUKICAgICAgICBbWyAtZSAkSE9NRS9maW0gXV0gJiYgcm0gJEhPTUUvZmltICYmIGJyZWFrCiAgICAgICAgZWNobyAtZSAiXDAzM1swOzMzbV0iCiAgICAgICAgc2xlZXAgMXMKICAgICAgICB0cHV0IGN1dTEKICAgICAgICB0cHV0IGRsMQogICAgICAgIGVjaG8gLW5lICIgIFwwMzNbMDszM21QbGVhc2UgV2FpdCBMb2FkaW5nIFwwMzNbMTszN20tIFwwMzNbMDszM21bIgogICAgZG9uZQogICAgZWNobyAtZSAiXDAzM1swOzMzbV1cMDMzWzE7MzdtIC1cMDMzWzE7MzJtIE9LICFcMDMzWzE7MzdtIgogICAgdHB1dCBjbm9ybQp9CnJlczEoKSB7CiAgICB3Z2V0IGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9IdWJkYXJrd2ViL1ZQc1RPcFBMVUcvbWFpbi91YnVudHUvbWVudS56aXAKICAgIHVuemlwIG1lbnUuemlwCiAgICBjaG1vZCAreCBtZW51LyoKICAgIG12IG1lbnUvKiAvdXNyL2xvY2FsL3NiaW4KICAgIHJtIC1yZiBtZW51CiAgICBybSAtcmYgbWVudS56aXAKICAgIHJtIC1yZiB1cGRhdGUuc2gKfQpuZXRmaWx0ZXItcGVyc2lzdGVudApjbGVhcgplY2hvIC1lICJcMDMzWzE7MzZt4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSBXDAzM1swbSIKZWNobyAtZSAiIFxlWzE7OTc7MTAxbSAgICAgICAgICBVUERBVEVEIFNDUklQVCBQT1dFUkVEIEJZIPCfp5HigI3wn5K7VE9wUExVR/CfkLzwn4+E4pu377iP8J+MivCfp5HigI3wn5K74pij77iP8J+ltyBDeWJlcnB1bmsg8J+QvPCfj4Lwn4+E4pu377iP8J+MivCfp5HigI3wn5K78J+XvSAgICAgXGVbMG0iCmVjaG8gLWUgIlwwMzNbMTszNm3ilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIHilIFcMDMzWzBtIgplY2hvIC1lICIiCmVjaG8gLWUgIiAgXDAzM1sxOzkxbSB1cGRhdGUgc2NyaXB0IHNlcnZpY2VcMDMzWzE7MzdtIgpmdW5fYmFyICdyZXMxJwplY2hvIC1lICJcMDMzWzE7MzZt4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSB4pSBXDAzM1swbSIKZWNobyAtZSAiIgpyZWFkIC1uIDEgLXMgLXIgLXAgIlByZXNzIFsgRW50ZXIgXSB0byBiYWNrIG9uIG1lbnUiCm1lbnUKCiMjIyMjIyMjIyMjLSBDT0xPUiBDT0RFIC0jIyMjIyMjIyMjIyMjIwo=' | base64 -d)"
+eval "$decoded_script"
